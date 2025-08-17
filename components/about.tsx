@@ -3,7 +3,7 @@ import React from "react";
 const About = ({ user }: any) => {
   return (
     <>
-      <h2 className="text-5xl">About the Author</h2>
+      <h2 className="text-xl md:text-5xl">About the Author</h2>
       <div className="mt-2 flex flex-col lg:flex-row space-x  w-full h-fit items-center   space-x-4">
         <div className=" w-1/2  rounded-4xl overflow-clip ">
           <img
