@@ -7,14 +7,11 @@ const TopHeader = async () => {
     take: 5,
   });
   return (
-    <div className="p-4 w-screen  absolute hidden md:block">
+    <div className="p-4 w-screen  z-50 absolute hidden md:block">
       <ul className=" flex justify-evenly text-xs">
         {categories.map((cat, key) => (
           <li key={key}>
-            <a
-              className="active:underline visited:underline"
-              href={`/categories/${cat.id}`}
-            >
+            <a className=" visited:underline" href={`/categories/${cat.id}`}>
               {cat.name}
             </a>
           </li>

@@ -67,7 +67,7 @@ const MobileHome = async () => {
               <div className="w-full flex space-x-4 items-center ">
                 <div className="w-1/3  h-full ">
                   <img
-                    src={`${post.thumbnail || "./mental.jpg"}`}
+                    src={`${post.thumbnail || "./opengraph-image.jpg"}`}
                     className="w-full rounded object-cover"
                     alt=""
                   />
@@ -102,7 +102,7 @@ const MobileHome = async () => {
                       <div className="w-full flex space-x-4 items-center ">
                         <div className="w-1/3  h-full">
                           <img
-                            src={`${post.thumbnail || "./mental.jpg"}`}
+                            src={`${post.thumbnail || "./opengraph-image.jpg"}`}
                             className="w-full rounded object-cover"
                             alt=""
                           />

@@ -14,7 +14,9 @@ const Featured = ({ posts }: Props) => {
   const third = posts[2] || posts[0];
   const link1 = posts[3] || posts[0];
   const link2 = posts[4] || posts[0];
-
+  if (!posts[0]) {
+    return null;
+  }
   const firstTitle = splitTitleByLines(first.title, { totalLines: 2 });
   const secondTitle = splitTitleByLines(second.title, {
     totalLines: 2,
@@ -55,7 +57,7 @@ const Featured = ({ posts }: Props) => {
             </a>
           </div>
           <img
-            src={first.thumbnail || "/mental.jpg"}
+            src={first.thumbnail || "/opengraph-image.jpg"}
             className="object-cover w-full h-full"
           />
         </div>
