@@ -67,7 +67,7 @@ const MobileHome = async () => {
               <div className="w-full flex space-x-4 items-center ">
                 <div className="w-1/3  h-full ">
                   <img
-                    src={`${post.thumbnail || "./opengraph-image.jpg"}`}
+                    src={`${post.thumbnail || "/opengraph-image.jpg"}`}
                     className="w-full rounded object-cover"
                     alt=""
                   />
@@ -77,10 +77,10 @@ const MobileHome = async () => {
             </Link>
 
             <span className="text-[10px] text-gray-500">
-              by <b className="text-black">{featuredPost.user.name}</b> 🕙{" "}
-              <span>{new Date(featuredPost.createdAt).getDate()}</span>/
-              <span>{new Date(featuredPost.createdAt).getMonth()}</span>/
-              <span>{new Date(featuredPost.createdAt).getFullYear()}</span>
+              by <b className="text-black">{post.user.name}</b> 🕙{" "}
+              <span>{new Date(post.createdAt).getDate()}</span>/
+              <span>{new Date(post.createdAt).getMonth()}</span>/
+              <span>{new Date(post.createdAt).getFullYear()}</span>
             </span>
             <div className="flex-1">
               <p className="line-clamp-2 text-[12px] justify-center text-gray-500">
@@ -102,7 +102,7 @@ const MobileHome = async () => {
                       <div className="w-full flex space-x-4 items-center ">
                         <div className="w-1/3  h-full">
                           <img
-                            src={`${post.thumbnail || "./opengraph-image.jpg"}`}
+                            src={`${post.thumbnail || "/opengraph-image.jpg"}`}
                             className="w-full rounded object-cover"
                             alt=""
                           />
