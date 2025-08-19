@@ -10,7 +10,13 @@ const getPosts = () =>
   unstable_cache(
     () =>
       prisma.post.findMany({
-        where: { featured: true, published: true },
+        where: {
+          featured: true,
+          published: true,
+          Category: {
+            name: "Psychology",
+          },
+        },
         include: { user: true, Subcategory: true },
         orderBy: { updatedAt: "desc" },
       }),

@@ -6,10 +6,13 @@ const Page = () => {
       <div className="w-full h-full max-w-5xl mt-10 py-20 flex flex-col items-center">
         <div className="w-full aspect-[640/1685] max-w-full">
           <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSc3OuuUL-RuECOFkEd_Xy3HRDN8qZTvbouU7HavedvozKH0Lg/viewform?embedded=true"
-            className="w-full h-full border-0"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdO50dksWrmRY9xpD7CfcWIKVuDOa01ymh7aAncsnnqlG6QDg/viewform?embedded=true"
+            className="w-full  border-0"
+            height={600}
             loading="lazy"
-          />
+          >
+            Loading…
+          </iframe>
         </div>
       </div>
     </div>

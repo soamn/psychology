@@ -14,7 +14,7 @@ const About = ({ user }: any) => {
         </div>
         <div className="  h-full flex flex-col w-fit items-center space-y-4">
           <div className="  w-full ">
-            <h2 className="lg:text-5xl  w-full font-medium mb-5">
+            <h2 className="md:text-5xl  w-full font-medium mb-5">
               {user.name}
             </h2>
             <p className="text-xs md:text-lg xl:text-xl line-clamp-5">

@@ -11,7 +11,13 @@ const getPost = (slug: string) =>
   unstable_cache(
     () =>
       prisma.post.findUnique({
-        where: { slug: slug, published: true },
+        where: {
+          slug: slug,
+          published: true,
+          Category: {
+            name: "Psychology",
+          },
+        },
         include: { user: true, Subcategory: true },
       }),
     [`post-${slug}`],
@@ -156,7 +162,7 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
           type="application/ld+json"
           suppressHydrationWarning
           key="blog-jsonld"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p className="text-xs text-center   py-2 w-full  ">
           © {new Date().getUTCFullYear()} IndianPsychology.xyz | All rights
