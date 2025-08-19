@@ -34,8 +34,8 @@ export async function generateMetadata({
     where: { slug: slug, published: true },
   });
 
-  const title = post?.title || "Happy Reading";
-  const description = post?.description || "Post description";
+  const title = post?.title || "Indian Psychology";
+  const description = post?.description || "Indian Psychology";
   const image = post?.thumbnail || "";
   const url = `https://${process.env.NEXT_PUBLIC_API_URL}/${slug}`;
 
@@ -47,7 +47,7 @@ export async function generateMetadata({
       title,
       description,
       url,
-      //   siteName: "amannegi.online",
+      siteName: "Indian Psychology",
       images: [
         {
           url: image,
@@ -64,7 +64,9 @@ export async function generateMetadata({
       description,
       images: [image],
     },
-    // metadataBase: new URL("https://amannegi.online.app"),
+    metadataBase: new URL(
+      `${process.env.NEXT_PUBLIC_API_URL}/opengraph-image.png`
+    ),
     alternates: {
       canonical: url,
     },
