@@ -65,7 +65,7 @@ export async function generateMetadata({
       images: [image],
     },
     metadataBase: new URL(
-      `${process.env.NEXT_PUBLIC_API_URL}/opengraph-image.png`
+      `${process.env.NEXT_PUBLIC_API_URL}/opengraph-image.jpg`
     ),
     alternates: {
       canonical: url,

@@ -4,7 +4,7 @@ import TopHeader from "@/components/topheader";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    `${process.env.NEXT_PUBLIC_API_URL}/opengraph-image.png`
+    `${process.env.NEXT_PUBLIC_API_URL}/opengraph-image.jpg`
   ),
   applicationName: "Indian Psychology",
   publisher: "Aman Negi",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "Indian Psychology",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_API_URL}/opengraph-image.png`,
+        url: `${process.env.NEXT_PUBLIC_API_URL}/opengraph-image.jpg`,
         width: 1200,
         height: 630,
         alt: "Indian Psychology",
