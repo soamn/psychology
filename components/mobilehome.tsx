@@ -1,31 +1,55 @@
 import prisma from "@/lib/prisma";
+import { unstable_cache } from "next/cache";
 import Link from "next/link";
 import React from "react";
 
-const MobileHome = async () => {
-  const featuredPosts = await prisma.post.findMany({
-    where: {
-      featured: true,
-      published: true,
-    },
-    include: { Subcategory: true, user: true },
-    take: 5,
-    orderBy: { updatedAt: "desc" },
-  });
-  const featuredPost = featuredPosts[0];
-  const categories = await prisma.subcategory.findMany({
-    include: {
-      Post: {
+const getfeaturedPosts = () =>
+  unstable_cache(
+    () =>
+      prisma.post.findMany({
         where: {
+          featured: true,
           published: true,
-          featured: false,
+          Category: {
+            name: "Psychology",
+          },
         },
-        include: { Subcategory: true, user: true },
-        take: 3,
+        include: { user: true, Subcategory: true },
+        take: 5,
         orderBy: { updatedAt: "desc" },
-      },
-    },
-  });
+      }),
+    [],
+    { tags: ["posts"] }
+  )();
+const getCategories = () =>
+  unstable_cache(
+    () =>
+      prisma.subcategory.findMany({
+        where: {
+          Category: {
+            name: "Psychology",
+          },
+        },
+        include: {
+          Post: {
+            where: {
+              published: true,
+              featured: false,
+            },
+            include: { Subcategory: true, user: true },
+            take: 3,
+            orderBy: { updatedAt: "desc" },
+          },
+        },
+      }),
+    [],
+    { tags: ["category"] }
+  )();
+
+const MobileHome = async () => {
+  const featuredPosts = await getfeaturedPosts();
+  const featuredPost = featuredPosts[0];
+  const categories = await getCategories();
   return (
     <div className="md:hidden">
       <div className="w-full h-60 px-1  flex flex-col mb-8">
